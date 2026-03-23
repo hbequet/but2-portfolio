@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | Développeur</title>
+    <style>
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+
+        /* Navigation */
+        nav { background: #2c3e50; color: white; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav ul { display: flex; justify-content: center; list-style: none; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+
+        /* Sections */
+        section { padding: 80px 20px; max-width: 1000px; margin: auto; min-height: 50vh; }
+        h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; color: #2c3e50; }
+
+        /* Header/Hero */
+        header { background: #ecf0f1; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+        /* Grille Projets */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #f9f9f9; }
+
+        footer { text-align: center; padding: 20px; background: #2c3e50; color: white; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À Propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header id="accueil">
+    <h1>Prénom Nom</h1>
+    <p>Étudiant en Informatique & Développeur en devenir</p>
+</header>
+
+<section id="a-propos">
+    <h2>À Propos</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+</section>
+
+<section id="projets">
+    <h2>Mes Projets</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Projet 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vultate velit esse.</p>
+        </div>
+        <div class="card">
+            <h3>Projet 2</h3>
+            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
+        </div>
+        <div class="card">
+            <h3>Projet 3</h3>
+            <p>Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si vous souhaitez me contacter :</p>
+    <ul>
+        <li>Email : lorem.ipsum@example.com</li>
+        <li>LinkedIn : linkedin.com/in/lorem</li>
+        <li>GitHub : github.com/lorem</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2026 - Mon Portfolio Étudiant</p>
+</footer>
+
+</body>
+</html>
