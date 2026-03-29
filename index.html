@@ -3,48 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio | Développeur</title>
+    <title>Portfolio | Validation de Compétences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* Reset & Base */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+        body { font-family: 'Inter', 'Segoe UI', sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; background: #f4f7f6; }
 
         /* Navigation */
-        nav { background: #2c3e50; color: white; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { background: #1a252f; color: white; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; }
         nav ul { display: flex; justify-content: center; list-style: none; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: white; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav ul li { margin: 0 20px; }
+        nav ul li a { color: #bdc3c7; text-decoration: none; font-weight: 500; transition: 0.3s; }
         nav ul li a:hover { color: #3498db; }
 
-        /* Sections */
-        section { padding: 80px 20px; max-width: 1000px; margin: auto; min-height: 50vh; }
-        h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; color: #2c3e50; }
+        /* Header */
+        header { height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; text-align: center; }
 
-        /* Header/Hero */
-        header { background: #ecf0f1; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        /* Sections */
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        h2 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; color: #2c3e50; position: relative; }
+        h2::after { content: ''; width: 50px; height: 4px; background: #3498db; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
         /* Grille Projets */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 
-        /* Style des cartes en tant que liens */
         .card-link { text-decoration: none; color: inherit; display: block; }
         .card {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 8px;
-            background: #f9f9f9;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
             height: 100%;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: #3498db;
-        }
-        .card h3 { margin-bottom: 10px; color: #2c3e50; }
-        .btn-more { display: inline-block; margin-top: 15px; color: #3498db; font-weight: bold; font-size: 0.9em; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); border-color: #3498db; }
 
-        footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px; }
+        /* Zone de la compétence (AC) */
+        .ac-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            min-height: 60px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .ac-badge {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .project-category {
+            color: #2c3e50;
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card-content { padding: 25px; flex-grow: 1; }
+        .card h3 { margin-bottom: 12px; color: #3498db; font-size: 1.3rem; }
+        .card p { font-size: 0.95rem; color: #666; }
+
+        .card-footer { padding: 15px 25px; background: white; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
+
+        /* Tags de technos */
+        .tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag { background: #f0f2f5; color: #555; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; border: 1px solid #e0e0e0; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1a252f;
+            color: #bdc3c7;
+        }
+        .contact-info { margin-bottom: 20px; font-size: 1.1rem; }
+        .social-links { display: flex; justify-content: center; gap: 25px; margin-top: 20px; }
+        .social-links a {
+            color: #bdc3c7;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-links a:hover { transform: scale(1.2); }
+        .social-links .github:hover { color: #ffffff; }
+        .social-links .linkedin:hover { color: #0077b5; }
     </style>
 </head>
 <body>
@@ -52,72 +104,128 @@
 <nav>
     <ul>
         <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#a-propos">À Propos</a></li>
-        <li><a href="#projets">Projets</a></li>
+        <li><a href="#skills">Apprentissages</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <header id="accueil">
     <h1>Prénom Nom</h1>
-    <p>Étudiant en Informatique & Développeur en devenir</p>
+    <p>Portfolio de Compétences Informatiques (BUT)</p>
 </header>
 
-<section id="a-propos">
-    <h2>À Propos</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-</section>
-
-<section id="projets">
-    <h2>Mes Projets</h2>
+<section id="skills">
+    <h2>Mes Apprentissages Validés</h2>
     <div class="grid">
-        <a href="projets/projet-1.html" class="card-link">
+
+        <a href="skills/skill-1.html" class="card-link">
             <article class="card">
-                <h3>Système de Gestion de Stocks</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vultate velit esse.</p>
-                <span class="btn-more">Détails & Compétences →</span>
+                <div class="ac-header">
+                    <span class="ac-badge">AC21.03</span>
+                    <span class="project-category">Adopter de bonnes pratiques de conception et de programmation</span>
+                </div>
+                <div class="card-content">
+                    <h3>Émulateur d'architecture processeur</h3>
+                    <p>Développement en TDD d'un émulateur capable d'exécuter un langage d'assemblage personnalisé avec gestion des interruptions et des ports.</p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">TDD</span>
+                        <span class="tag">Google Test</span>
+                        <span class="tag">Design Pattern Commande</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-weight: bold; color: #3498db; font-size: 0.9em;">Voir l'analyse →</span>
+                    <small style="color: #999;">Jan. 2026</small>
+                </div>
             </article>
         </a>
 
-        <a href="projets/projet-2.html" class="card-link">
+        <a href="skills/skill-2.html" class="card-link">
             <article class="card">
-                <h3>Application Mobile Santé</h3>
-                <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
-                <span class="btn-more">Détails & Compétences →</span>
+                <div class="ac-header">
+                    <span class="ac-badge">AC22.02</span>
+                    <span class="project-category">Utiliser des techniques algorithmiques adaptées pour des problèmes complexes</span>
+                </div>
+                <div class="card-content">
+                    <h3>Projet raytracer en Python</h3>
+                    <p>Affichage de solides 3D via l'algorithme de raytracing avec optimisation des structures de données et parallélisation GPU.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Raytracing</span>
+                        <span class="tag">Optimisation</span>
+                        <span class="tag">Calcul Parallèle</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-weight: bold; color: #3498db; font-size: 0.9em;">Voir l'analyse →</span>
+                    <small style="color: #999;">Mars 2026</small>
+                </div>
             </article>
         </a>
 
-        <a href="projets/projet-3.html" class="card-link">
+        <a href="skills/skill-3.html" class="card-link">
             <article class="card">
-                <h3>Algorithme de Tri Optimisé</h3>
-                <p>Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
-                <span class="btn-more">Détails & Compétences →</span>
+                <div class="ac-header">
+                    <span class="ac-badge">AC24.02</span>
+                    <span class="project-category">Assurer la sécurité des données (intégrité et confidentialité)</span>
+                </div>
+                <div class="card-content">
+                    <h3>Sécurité ERP : Gestion de Ressources</h3>
+                    <p>Garantie de la confidentialité des données enseignants via chiffrement des identifiants (sel + hash) et sécurisation des routes backend.</p>
+                    <div class="tags">
+                        <span class="tag">MariaDB</span>
+                        <span class="tag">Chiffrement</span>
+                        <span class="tag">Hashing (Salt)</span>
+                        <span class="tag">Sécurité</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-weight: bold; color: #3498db; font-size: 0.9em;">Voir l'analyse →</span>
+                    <small style="color: #999;">Fév. 2026</small>
+                </div>
             </article>
         </a>
 
-        <a href="projets/projet-4.html" class="card-link">
+        <a href="skills/skill-4.html" class="card-link">
             <article class="card">
-                <h3>Site E-commerce (Back-end)</h3>
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
-                <span class="btn-more">Détails & Compétences →</span>
+                <div class="ac-header">
+                    <span class="ac-badge">AC23.01</span>
+                    <span class="project-category">Concevoir et développer des applications communicantes</span>
+                </div>
+                <div class="card-content">
+                    <h3>Architecture ERP Multi-couches</h3>
+                    <p>Mise en place d'une architecture Frontend/Backend/BDD utilisant Spring Boot et Hibernate pour la communication inter-services.</p>
+                    <div class="tags">
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Hibernate</span>
+                        <span class="tag">API REST</span>
+                        <span class="tag">Fullstack</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-weight: bold; color: #3498db; font-size: 0.9em;">Voir l'analyse →</span>
+                    <small style="color: #999;">Déc. 2025</small>
+                </div>
             </article>
         </a>
+
     </div>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si vous souhaitez me contacter :</p>
-    <ul style="list-style: none; margin-top: 10px;">
-        <li><strong>Email :</strong> lorem.ipsum@example.com</li>
-        <li><strong>LinkedIn :</strong> linkedin.com/in/lorem</li>
-        <li><strong>GitHub :</strong> github.com/lorem</li>
-    </ul>
-</section>
-
-<footer>
-    <p>&copy; 2026 - Mon Portfolio Étudiant</p>
+<footer id="contact">
+    <div class="contact-info">
+        <p><i class="fa-regular fa-envelope"></i> lorem.ipsum@example.com</p>
+    </div>
+    <div class="social-links">
+        <a href="https://github.com/monpseudo" target="_blank" class="github" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/lorem" target="_blank" class="linkedin" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 - Portfolio Étudiant</p>
 </footer>
 
 </body>
