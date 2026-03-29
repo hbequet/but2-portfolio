@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détail Projet - Nom du Projet</title>
+    <title>Détail Projet - Émulateur d'architecture processeur</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 40px 20px; }
         .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; }
         .tag { background: #eee; padding: 5px 10px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; }
-        .hero-img { width: 100%; height: 300px; background: #ddd; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 8px; }
+        .hero-img { width: 100%; height: 300px; background: #ddd; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 8px; color: #666; font-style: italic; }
         h1 { color: #2c3e50; }
         h2 { margin-top: 30px; border-left: 5px solid #3498db; padding-left: 15px; }
     </style>
@@ -17,34 +17,36 @@
 
 <a href="../index.html" class="back-link">← Retour à l'accueil</a>
 
-<h1>Nom du Projet</h1>
+<h1>Émulateur d'architecture processeur</h1>
 <div>
-    <span class="tag">Python</span>
-    <span class="tag">Flask</span>
-    <span class="tag">PostgreSQL</span>
+    <span class="tag">C++</span>
+    <span class="tag">TDD</span>
+    <span class="tag">Google Test</span>
+    <span class="tag">Design Pattern Commande</span>
 </div>
 
-<div class="hero-img">[Capture d'écran ou Logo du projet]</div>
+<div class="hero-img">[Insérer image ici : Architecture ou code de l'émulateur]</div>
 
 <section>
-    <h2>Contexte et Objectifs</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <h2>Contexte du projet</h2>
+    <p>Ce projet consiste en la réalisation d'un émulateur permettant d'exécuter des lignes d'un langage d'assemblage (ASM) personnalisé, conçu pour une architecture de processeur créée sur mesure.</p>
 </section>
 
 <section>
-    <h2>Compétences Validées</h2>
+    <h2>Lien avec l'AC21.03 : Adopter de bonnes pratiques</h2>
+    <p>La validation de cette compétence s'appuie sur la rigueur architecturale et méthodologique appliquée durant le développement :</p>
     <ul>
-        <li><strong>Conception :</strong> Modélisation de la base de données (UML/Merise).</li>
-        <li><strong>Développement :</strong> Mise en place d'une API REST.</li>
-        <li><strong>Sécurité :</strong> Gestion de l'authentification via JWT.</li>
+        <li><strong>Architecture :</strong> Mise en place de l'architecture d'exécution des instructions (basée sur le <em>Design Pattern Commande</em>), d'une architecture d'interruptions et d'interactions avec des ports d'entrée/sortie.</li>
+        <li><strong>Méthodologie TDD :</strong> Le développement a été piloté par les tests (Test Driven Development). Les tests unitaires ont été rédigés en amont avec <em>Google Test</em> en respectant le standard <strong>AAA (Arrange, Act, Assert)</strong> avant même l'implémentation des méthodes.</li>
     </ul>
 </section>
 
 <section>
-    <h2>Difficultés rencontrées & Solutions</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <h2>Limites & Solutions envisagées</h2>
+    <p>Lors de l'analyse des performances de l'architecture logicielle retenue, j'ai identifié le point d'optimisation suivant :</p>
     <blockquote>
-        Exemple : "J'ai rencontré un problème de performance sur les requêtes SQL, que j'ai résolu en ajoutant des index sur les colonnes clés."
+        <strong>Limite :</strong> Le fait d'utiliser le design pattern commande amène à devoir manipuler une liste de pointeurs, ce qui n'est pas optimal en termes de performances car le cache CPU n'est pas exploité à son plein potentiel (cache miss fréquents).<br><br>
+        <strong>Solution proposée :</strong> Utiliser une implémentation permettant d'avoir une liste de branches pour exécuter chaque instruction (ex: grand switch/case ou tables de sauts), plutôt que d'instancier une classe fille par instruction ASM.
     </blockquote>
 </section>
 
