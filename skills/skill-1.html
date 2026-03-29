@@ -8,8 +8,22 @@
         body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 40px 20px; }
         .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; }
         .tag { background: #eee; padding: 5px 10px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; }
-        .hero-img { width: 100%; height: 300px; background: #ddd; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 8px; color: #666; font-style: italic; }
-        h1 { color: #2c3e50; }
+        .hero-img {
+            width: 100%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }        h1 { color: #2c3e50; }
         h2 { margin-top: 30px; border-left: 5px solid #3498db; padding-left: 15px; }
     </style>
 </head>
@@ -51,7 +65,7 @@
 </section>
 
 <section style="margin-top: 40px; text-align: center;">
-    <a href="https://github.com/ton-pseudo/repo-du-projet" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Voir le code sur GitHub</a>
+    <a href="https://github.com/hbequet/FlaPU2Engine" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Voir le code sur GitHub</a>
 </section>
 
 </body>

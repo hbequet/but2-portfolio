@@ -8,7 +8,22 @@
         body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 40px 20px; }
         .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; }
         .tag { background: #eee; padding: 5px 10px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; }
-        .hero-img { width: 100%; height: 300px; background: #ddd; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 8px; color: #666; font-style: italic; }
+        .hero-img {
+            width: 100%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         h1 { color: #2c3e50; }
         h2 { margin-top: 30px; border-left: 5px solid #3498db; padding-left: 15px; }
     </style>
@@ -24,7 +39,9 @@
     <span class="tag">Shaders / GPU</span>
 </div>
 
-<div class="hero-img">[Insérer : Pasted image 20260224140819.png]</div>
+<div class="hero-img">
+    <img src="../resources/3d-raytracer.png" alt="Une image d'un triangle et d'une sphère rendus par un algorithme de raytracing.">
+</div>
 
 <section>
     <h2>Contexte du projet</h2>
@@ -48,10 +65,6 @@
         <strong>Difficulté :</strong> Le projet a d'abord été développé avec une implémentation strictement CPU de l'algorithme. Cela rendait les calculs de rendu extrêmement lents, et ce, même en divisant la charge de travail sur plusieurs threads du processeur.<br><br>
         <strong>Solution :</strong> Le passage par des <em>shaders</em> (exécution sur GPU) a permis d'améliorer de façon drastique la vitesse d'exécution de l'algorithme. Cela m'a permis d'afficher plusieurs dizaines de milliers de triangles simultanément en temps réel, compensant même le fait que mon implémentation initiale n'était pas la plus optimisée.
     </blockquote>
-</section>
-
-<section style="margin-top: 40px; text-align: center;">
-    <a href="https://github.com/ton-pseudo/repo-du-projet" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Voir le code sur GitHub</a>
 </section>
 
 </body>
