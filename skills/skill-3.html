@@ -39,7 +39,7 @@
 </div>
 
 <div class="hero-img">
-    <img src="../resources/encrypted-table.png" alt="Schéma topologique du réseau">
+    <img src="../resources/encrypted-table.png" alt="Exemple de valeurs dans la table chiffrée">
 </div>
 
 <section>
@@ -64,6 +64,10 @@
         <strong>Difficulté :</strong> Il fallait pouvoir assurer la connexion d'un utilisateur (vérification de ses credentials) alors que son identifiant en base de données était lui-même chiffré avec l'ajout d'un sel (salt) aléatoire.<br><br>
         <strong>Solution :</strong> Au lieu de tenter de déchiffrer l'identifiant pour le comparer, la solution implémentée a été d'enregistrer le hash de l'identifiant (et son sel). Lors de la connexion, le système recalcule le hash de l'identifiant fourni par l'utilisateur et le compare directement au hash stocké en base, garantissant ainsi qu'aucune donnée en clair ne transite ou n'est testée.
     </blockquote>
+</section>
+
+<section style="margin-top: 40px; text-align: center;">
+    <a href="https://github.com/nbillaud1/sae_erp" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Voir le code sur GitHub</a>
 </section>
 
 </body>

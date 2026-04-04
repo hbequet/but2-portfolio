@@ -36,10 +36,12 @@
     <span class="tag">Spring Boot</span>
     <span class="tag">Hibernate</span>
     <span class="tag">API REST</span>
-    <span class="tag">SSH Tunnel</span>
+    <span class="tag">Tunnel SSH</span>
 </div>
 
-<div class="hero-img">[Insérer image de l'architecture réseau/logicielle ici]</div>
+<div class="hero-img">
+    <img src="../resources/controllers.png" alt="Liste des controllers du projet">
+</div>
 
 <section>
     <h2>Contexte du projet</h2>
@@ -62,6 +64,14 @@
         <strong>Difficulté :</strong> La base de données était hébergée sur un serveur distant, externe à notre environnement de développement local. Établir une connexion sécurisée s'est avéré complexe, car il fallait absolument éviter d'exposer et d'ouvrir le port de la base de données directement sur le réseau internet public.<br><br>
         <strong>Solution :</strong> Pour contourner ce problème, j'ai mis en place un tunnel chiffré. À chaque connexion du backend vers la base de données, les communications transitent de manière sécurisée via une connexion SSH, garantissant l'étanchéité du réseau.
     </blockquote>
+
+    <div class="hero-img">
+        <img src="../resources/db-connection.png" alt="Code s'occupant de se connecter en SSH au serveur de la base de données">
+    </div>
+</section>
+
+<section style="margin-top: 40px; text-align: center;">
+    <a href="https://github.com/nbillaud1/sae_erp" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Voir le code sur GitHub</a>
 </section>
 
 </body>
