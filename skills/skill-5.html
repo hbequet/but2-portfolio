@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail Projet - Mise en place d'un réseau complet</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; }
+        .tag { background: #eee; padding: 5px 10px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; }
+        .hero-img {
+            width: 100%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        h1 { color: #2c3e50; }
+        h2 { margin-top: 30px; border-left: 5px solid #3498db; padding-left: 15px; }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-link">← Retour à l'accueil</a>
+
+<h1>Mise en place d'un réseau complet</h1>
+<div>
+    <span class="tag">Subnetting</span>
+    <span class="tag">DNS / DHCP</span>
+    <span class="tag">SSH / SFTP</span>
+    <span class="tag">Routage Statique</span>
+    <span class="tag">Wireshark</span>
+</div>
+
+<div class="hero-img">
+    <img src="../resources/network.png" alt="Schéma topologique du réseau">
+</div>
+
+<section>
+    <h2>Contexte du projet</h2>
+    <p>Ce projet consistait en la conception et le déploiement d'une infrastructure réseau virtualisée complète. L'objectif était de créer un environnement fonctionnel et sécurisé en segmentant le réseau et en déployant les services essentiels à son fonctionnement.</p>
+</section>
+
+<section>
+    <h2>Lien avec l'AC23.02 : Utiliser des serveurs et services réseaux</h2>
+    <p>Mon rôle principal a été d'administrer et de configurer cette infrastructure de bout en bout :</p>
+    <ul>
+        <li><strong>Adressage & Subnetting :</strong> Découpage de l'espace d'adressage IP en plusieurs plages (sous-réseaux) pour isoler logiquement les différentes parties de l'infrastructure.</li>
+        <li><strong>Services d'infrastructure :</strong> Configuration d'un serveur <strong>DHCP</strong> pour l'attribution dynamique des adresses IP aux postes clients et d'un serveur <strong>DNS</strong> pour la résolution des noms de domaine internes.</li>
+        <li><strong>Serveur privé & Sécurité :</strong> Déploiement d'un serveur sécurisé avec des accès restreints et chiffrés, garantissant la confidentialité des échanges via les protocoles <strong>SSH</strong> (administration à distance) et <strong>SFTP</strong> (transfert de fichiers).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Difficulté technique & Solution</h2>
+    <p>L'audit de sécurité des flux a révélé un problème de connectivité lié au routage :</p>
+    <blockquote>
+        <strong>Difficulté :</strong> Afin de valider la sécurité des données échangées, je devais effectuer une capture de trames avec Wireshark depuis la machine hôte. Cependant, l'hôte physique n'avait aucun chemin réseau connu pour atteindre les sous-réseaux virtuels internes isolés.<br><br>
+        <strong>Solution :</strong> J'ai mis en place du <strong>routage statique</strong> sur la machine hôte. J'ai ajouté une route spécifique indiquant que pour joindre le sous-réseau des serveurs sécurisés, le trafic devait passer par l'ordinateur configuré en "pont" (qui agissait alors comme passerelle/gateway). Cela a rétabli la connectivité de bout en bout pour l'analyse Wireshark.
+    </blockquote>
+</section>
+
+</body>
+</html>
