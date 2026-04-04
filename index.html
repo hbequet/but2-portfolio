@@ -97,6 +97,16 @@
         .social-links a:hover { transform: scale(1.2); }
         .social-links .github:hover { color: #ffffff; }
         .social-links .linkedin:hover { color: #0077b5; }
+
+        .email-link {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .email-link:hover {
+            color: #3498db;
+        }
     </style>
 </head>
 <body>
@@ -236,7 +246,10 @@
 
 <footer id="contact">
     <div class="contact-info">
-        <p><i class="fa-regular fa-envelope"></i> bequet.hg@gmail.com</p>
+        <p>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:bequet.hg@gmail.com" class="email-link">bequet.hg@gmail.com</a>
+        </p>
     </div>
     <div class="social-links">
         <a href="https://github.com/hbequet" target="_blank" class="github" title="GitHub">
